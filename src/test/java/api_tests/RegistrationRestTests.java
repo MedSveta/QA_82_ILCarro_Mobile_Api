@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import utils.PropertiesReader;
 import utils.UserFactory;
 
 public class RegistrationRestTests
@@ -26,8 +27,8 @@ public class RegistrationRestTests
     @Test
     public void loginRestPositiveTest(){
         User user = User.builder()
-                .username("sima_simonova370@gmail.com")
-                .password("BSas124!")
+                .username(PropertiesReader.getProperty("base.properties", "email"))
+                .password(PropertiesReader.getProperty("base.properties", "password"))
                 .build();
         Response response = registrationLogin
                 (user, LOGIN_URL);
