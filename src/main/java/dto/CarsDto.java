@@ -9,6 +9,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class TokenDto {
-    private String accessToken;
+public class CarsDto {
+    private CarsDto[] cars;
 }
